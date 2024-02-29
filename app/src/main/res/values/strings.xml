@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Alias</string>
+    <string name="one">Word 11</string>
+    <string name="two">Word 12</string>
+    <string name="three">Word 13</string>
+    <string name="four">Word 14</string>
+    <string name="five">Word 15</string>
+    <string name="six">Word 16</string>
+    <string name="seven">Word 17</string>
+    <string name="eight">Word 18</string>
+    <string name="nine">Word 19</string>
+    <string name="ten">Word 20</string>
+</resources>
