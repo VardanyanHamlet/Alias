@@ -5,11 +5,13 @@ import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -81,6 +83,51 @@ public class MainActivity2 extends AppCompatActivity {
         TextView word8 = findViewById(R.id.word8);
         TextView word9 = findViewById(R.id.word9);
         TextView word10 = findViewById(R.id.word10);
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String selectedLanguage = preferences.getString("language", "armenian");
+
+        switch (selectedLanguage) {
+            case "armenian":
+                word1.setText("Armenian");
+                word2.setText("Armenian");
+                word3.setText("Armenian");
+                word4.setText("Armenian");
+                word5.setText("Armenian");
+                word6.setText("Armenian");
+                word7.setText("Armenian");
+                word8.setText("Armenian");
+                word9.setText("Armenian");
+                word10.setText("Armenian");
+                break;
+            case "english":
+                word1.setText("English");
+                word2.setText("English");
+                word3.setText("English");
+                word4.setText("English");
+                word5.setText("English");
+                word6.setText("English");
+                word7.setText("English");
+                word8.setText("English");
+                word9.setText("English");
+                word10.setText("English");
+                break;
+            case "russian":
+                word1.setText("Russian");
+                word2.setText("Russian");
+                word3.setText("Russian");
+                word4.setText("Russian");
+                word5.setText("Russian");
+                word6.setText("Russian");
+                word7.setText("Russian");
+                word8.setText("Russian");
+                word9.setText("Russian");
+                word10.setText("Russian");
+                break;
+            default:
+                word1.setText("Default word");
+                break;
+        }
 
         //int color = ContextCompat.getColor(this, R.color.white);
 

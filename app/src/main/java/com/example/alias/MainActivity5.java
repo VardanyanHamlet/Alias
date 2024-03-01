@@ -16,7 +16,6 @@ import android.widget.TextView;
 public class MainActivity5 extends AppCompatActivity {
 
     TextView language, section;
-    CheckBox english, russian, armenian;
     CheckBox sec1, sec2, sec3, sec4, sec5, sec6;
     Button play;
 
@@ -35,6 +34,43 @@ public class MainActivity5 extends AppCompatActivity {
         sec4 = findViewById(R.id.sec4);
         sec5 = findViewById(R.id.sec5);
         sec6 = findViewById(R.id.sec6);
+
+
+        CompoundButton.OnCheckedChangeListener listener = new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    if (buttonView != sec1) {
+                        sec1.setChecked(false);
+                    }
+                    if (buttonView != sec2) {
+                        sec2.setChecked(false);
+                    }
+                    if (buttonView != sec3) {
+                        sec3.setChecked(false);
+                    }
+                    if (buttonView != sec4) {
+                        sec4.setChecked(false);
+                    }
+                    if (buttonView != sec4) {
+                        sec4.setChecked(false);
+                    }
+                    if (buttonView != sec5) {
+                        sec5.setChecked(false);
+                    }
+                    if (buttonView != sec6) {
+                        sec6.setChecked(false);
+                    }
+                }
+            }
+        };
+
+        sec1.setOnCheckedChangeListener(listener);
+        sec2.setOnCheckedChangeListener(listener);
+        sec3.setOnCheckedChangeListener(listener);
+        sec4.setOnCheckedChangeListener(listener);
+        sec5.setOnCheckedChangeListener(listener);
+        sec6.setOnCheckedChangeListener(listener);
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override

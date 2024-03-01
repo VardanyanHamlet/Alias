@@ -114,5 +114,35 @@
         app:srcCompat="@drawable/crown"
         tools:ignore="MissingConstraints" />
 
+    <LinearLayout
+        android:id="@+id/team1_mas"
+        android:layout_width="191dp"
+        android:layout_height="410dp"
+        android:backgroundTint="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54"
+        tools:ignore="MissingConstraints">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/team2_mas"
+        android:layout_width="191dp"
+        android:layout_height="410dp"
+        android:backgroundTint="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54"
+        tools:ignore="MissingConstraints">
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
