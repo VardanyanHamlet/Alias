@@ -33,23 +33,12 @@ public class MainActivity6 extends AppCompatActivity {
         english = findViewById(R.id.english);
         russian = findViewById(R.id.russian);
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-        armenian.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                preferences.edit().putString("language", "armenian").apply();
-            }
-        });
-
-        english.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                preferences.edit().putString("language", "english").apply();
-            }
-        });
-
-        russian.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                preferences.edit().putString("language", "russian").apply();
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity6.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -73,13 +62,5 @@ public class MainActivity6 extends AppCompatActivity {
         armenian.setOnCheckedChangeListener(listener);
         english.setOnCheckedChangeListener(listener);
         russian.setOnCheckedChangeListener(listener);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity6.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    TextView word1, word2, word3, word4, word5, word6, word7, word8, word9, word10;
+    TextView word1, word2, word3, word4, word5, word6, word7;
     private TextView timer;
     private CountDownTimer countDownTimer;
 
@@ -31,9 +31,6 @@ public class MainActivity2 extends AppCompatActivity {
     boolean press5 = false;
     boolean press6 = false;
     boolean press7 = false;
-    boolean press8 = false;
-    boolean press9 = false;
-    boolean press10 = false;
     private int grayCount = 0;
 
     @SuppressLint("MissingInflatedId")
@@ -57,6 +54,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onFinish() {
                 Intent intent = new Intent(MainActivity2.this, MainActivity4.class);
                 startActivity(intent);
+                finish();
             }
         };
 
@@ -69,9 +67,6 @@ public class MainActivity2 extends AppCompatActivity {
         final int[] count5 = {0};
         final int[] count6 = {0};
         final int[] count7 = {0};
-        final int[] count8 = {0};
-        final int[] count9 = {0};
-        final int[] count10 = {0};
 
         TextView word1 = findViewById(R.id.word1);
         TextView word2 = findViewById(R.id.word2);
@@ -80,54 +75,6 @@ public class MainActivity2 extends AppCompatActivity {
         TextView word5 = findViewById(R.id.word5);
         TextView word6 = findViewById(R.id.word6);
         TextView word7 = findViewById(R.id.word7);
-        TextView word8 = findViewById(R.id.word8);
-        TextView word9 = findViewById(R.id.word9);
-        TextView word10 = findViewById(R.id.word10);
-
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String selectedLanguage = preferences.getString("language", "armenian");
-
-        switch (selectedLanguage) {
-            case "armenian":
-                word1.setText("Armenian");
-                word2.setText("Armenian");
-                word3.setText("Armenian");
-                word4.setText("Armenian");
-                word5.setText("Armenian");
-                word6.setText("Armenian");
-                word7.setText("Armenian");
-                word8.setText("Armenian");
-                word9.setText("Armenian");
-                word10.setText("Armenian");
-                break;
-            case "english":
-                word1.setText("English");
-                word2.setText("English");
-                word3.setText("English");
-                word4.setText("English");
-                word5.setText("English");
-                word6.setText("English");
-                word7.setText("English");
-                word8.setText("English");
-                word9.setText("English");
-                word10.setText("English");
-                break;
-            case "russian":
-                word1.setText("Russian");
-                word2.setText("Russian");
-                word3.setText("Russian");
-                word4.setText("Russian");
-                word5.setText("Russian");
-                word6.setText("Russian");
-                word7.setText("Russian");
-                word8.setText("Russian");
-                word9.setText("Russian");
-                word10.setText("Russian");
-                break;
-            default:
-                word1.setText("Default word");
-                break;
-        }
 
         //int color = ContextCompat.getColor(this, R.color.white);
 
@@ -243,76 +190,15 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        word8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count8[0]++;
-                if (count8[0] % 2 == 0 || count8[0] == 0) {
-                    word8.setBackgroundColor(Color.WHITE);
-                    press8 = false;
-                } else {
-                    word8.setBackgroundColor(Color.GRAY);
-                    if ( word8.getCurrentTextColor() == Color.GRAY ) {
-                        press8 = true;
-                    }
-                }
-            }
-        });
 
-        word9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count9[0]++;
-                if (count9[0] % 2 == 0 || count9[0] == 0) {
-                    word9.setBackgroundColor(Color.WHITE);
-                    press9 = false;
-                } else {
-                    word9.setBackgroundColor(Color.GRAY);
-                    if ( word9.getCurrentTextColor() == Color.GRAY ) {
-                        press9 = true;
-                    }
-                }
-            }
-        });
-
-        word10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count10[0]++;
-                if (count10[0] % 2 == 0 || count10[0] == 0) {
-                    word10.setBackgroundColor(Color.WHITE);
-                    press10 = false;
-                } else {
-                    word10.setBackgroundColor(Color.GRAY);
-                    if ( word10.getCurrentTextColor() == Color.GRAY ) {
-                        press10 = true;
-                    }
-                }
-            }
-        });
-
-        String one = getResources().getString(R.string.one);
-        String two = getResources().getString(R.string.two);
-        String three = getResources().getString(R.string.three);
-        String four = getResources().getString(R.string.four);
-        String five = getResources().getString(R.string.five);
-        String six = getResources().getString(R.string.six);
-        String seven = getResources().getString(R.string.seven);
-        String eight = getResources().getString(R.string.eight);
-        String nine = getResources().getString(R.string.nine);
-        String ten = getResources().getString(R.string.ten);
-
-        if ( press1 == true && press2 == true && press3 == true && press4 == true && press5 == true && press6 == true && press7 == true && press8 == true && press9 == true && press10 == true) {
-            word1.setText(one);
-            word2.setText(two);
-            word3.setText(three);
-            word4.setText(four);
-            word5.setText(five);
-            word6.setText(six);
-            word7.setText(seven);
-            word8.setText(eight);
-            word9.setText(nine);
-            word10.setText(ten);
+        if ( press1 == true && press2 == true && press3 == true && press4 == true && press5 == true && press6 == true && press7 == true ) {
+            word1.setText("Word 8");
+            word2.setText("Word 9");
+            word3.setText("Word 10");
+            word4.setText("Word 11");
+            word5.setText("Word 12");
+            word6.setText("Word 13");
+            word7.setText("Word 14");
         }
     }
 

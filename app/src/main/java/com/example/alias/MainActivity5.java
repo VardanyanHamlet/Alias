@@ -77,6 +77,7 @@ public class MainActivity5 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity5.this, MainActivity4.class);
                 startActivity(intent);
+                finish();
             }
         });
 
