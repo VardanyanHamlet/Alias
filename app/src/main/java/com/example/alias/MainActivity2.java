@@ -24,6 +24,9 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView timer;
     private CountDownTimer countDownTimer;
     private int grayCount = 0;
+    private static final long TIMER_DURATION = 10000;
+    private SharedPreferences sharedPreferences;
+    private int count;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -36,6 +39,9 @@ public class MainActivity2 extends AppCompatActivity {
         timer = findViewById(R.id.timer);
 
         int initialTimeSeconds = 11;
+
+        sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        count = sharedPreferences.getInt("count", 0);
 
         countDownTimer = new CountDownTimer(initialTimeSeconds * 1000, 1000) {
             @Override
