@@ -40,9 +40,9 @@ public class MainActivity4 extends AppCompatActivity {
 
         TextView team12 = findViewById(R.id.team12);
         if ( count % 2 == 1 ) {
-            team12.setText("Team 1");
-        } else if ( count % 2 == 0 ) {
             team12.setText("Team 2");
+        } else if ( count % 2 == 0 ) {
+            team12.setText("Team 1");
         } else {
             team12.setText("START");
         }

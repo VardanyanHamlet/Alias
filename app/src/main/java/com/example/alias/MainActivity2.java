@@ -74,14 +74,6 @@ public class MainActivity2 extends AppCompatActivity {
         TextView word6 = findViewById(R.id.word6);
         TextView word7 = findViewById(R.id.word7);
 
-        final boolean[] press1 = {false};
-        final boolean[] press2 = {false};
-        final boolean[] press3 = {false};
-        final boolean[] press4 = {false};
-        final boolean[] press5 = {false};
-        final boolean[] press6 = {false};
-        final boolean[] press7 = {false};
-
         word1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,23 +157,6 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
-
-        if ( word1.getSolidColor() == Color.GRAY ) {
-            press1[0] = true;
-            word1.setText("elav");
-        } else if ( word1.getSolidColor() == Color.WHITE ) {
-            press1[0] = false;
-        }
-
-        /*if ( press1 == true && press2 == true && press3 == true && press4 == true && press5 == true && press6 == true && press7 == true ) {
-            word1.setText("Word 8");
-            word2.setText("Word 9");
-            word3.setText("Word 10");
-            word4.setText("Word 11");
-            word5.setText("Word 12");
-            word6.setText("Word 13");
-            word7.setText("Word 14");
-        }*/
     }
 
     private void updateTimer(int seconds) {
