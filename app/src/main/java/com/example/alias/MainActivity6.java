@@ -12,13 +12,11 @@ import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 
 public class MainActivity6 extends AppCompatActivity {
 
     ImageButton back;
-
-    CheckBox armenian, english, russian;
-
     private SharedPreferences preferences;
 
     @Override
@@ -29,9 +27,6 @@ public class MainActivity6 extends AppCompatActivity {
         setContentView(R.layout.activity_main6);
 
         back = findViewById(R.id.back);
-        armenian = findViewById(R.id.armenian);
-        english = findViewById(R.id.english);
-        russian = findViewById(R.id.russian);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,26 +36,5 @@ public class MainActivity6 extends AppCompatActivity {
                 finish();
             }
         });
-
-        CompoundButton.OnCheckedChangeListener listener = new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    if (buttonView != armenian) {
-                        armenian.setChecked(false);
-                    }
-                    if (buttonView != english) {
-                        english.setChecked(false);
-                    }
-                    if (buttonView != russian) {
-                        russian.setChecked(false);
-                    }
-                }
-            }
-        };
-
-        armenian.setOnCheckedChangeListener(listener);
-        english.setOnCheckedChangeListener(listener);
-        russian.setOnCheckedChangeListener(listener);
     }
 }

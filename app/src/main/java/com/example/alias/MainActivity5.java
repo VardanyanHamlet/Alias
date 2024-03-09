@@ -11,12 +11,15 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity5 extends AppCompatActivity {
 
     TextView language, section;
-    CheckBox sec1, sec2, sec3, sec4, sec5, sec6;
+    RadioButton sec1, sec2, sec3, sec4, sec5, sec6;
+    RadioButton armenian, english, russian;
     Button play;
 
     @SuppressLint("MissingInflatedId")
@@ -34,6 +37,9 @@ public class MainActivity5 extends AppCompatActivity {
         sec4 = findViewById(R.id.sec4);
         sec5 = findViewById(R.id.sec5);
         sec6 = findViewById(R.id.sec6);
+        armenian = findViewById(R.id.armenian);
+        english = findViewById(R.id.english);
+        russian = findViewById(R.id.russian);
 
 
         CompoundButton.OnCheckedChangeListener listener = new CompoundButton.OnCheckedChangeListener() {
@@ -72,6 +78,27 @@ public class MainActivity5 extends AppCompatActivity {
         sec5.setOnCheckedChangeListener(listener);
         sec6.setOnCheckedChangeListener(listener);
 
+        CompoundButton.OnCheckedChangeListener listener2 = new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    if (buttonView != armenian) {
+                        armenian.setChecked(false);
+                    }
+                    if (buttonView != english) {
+                        english.setChecked(false);
+                    }
+                    if (buttonView != russian) {
+                        russian.setChecked(false);
+                    }
+                }
+            }
+        };
+
+        armenian.setOnCheckedChangeListener(listener2);
+        english.setOnCheckedChangeListener(listener2);
+        russian.setOnCheckedChangeListener(listener2);
+
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +107,5 @@ public class MainActivity5 extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }
