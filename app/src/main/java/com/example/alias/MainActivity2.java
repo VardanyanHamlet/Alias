@@ -27,6 +27,7 @@ public class MainActivity2 extends AppCompatActivity {
     private static final long TIMER_DURATION = 10000;
     private SharedPreferences sharedPreferences;
     private int count;
+    protected int PressCount = 0;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -74,6 +75,7 @@ public class MainActivity2 extends AppCompatActivity {
         TextView word6 = findViewById(R.id.word6);
         TextView word7 = findViewById(R.id.word7);
 
+        /* Words */
         word1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +84,16 @@ public class MainActivity2 extends AppCompatActivity {
                     word1.setBackgroundColor(Color.WHITE);
                 } else {
                     word1.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 7 ) {
+                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -94,6 +106,16 @@ public class MainActivity2 extends AppCompatActivity {
                     word2.setBackgroundColor(Color.WHITE);
                 } else {
                     word2.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 7 ) {
+                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -106,6 +128,16 @@ public class MainActivity2 extends AppCompatActivity {
                     word3.setBackgroundColor(Color.WHITE);
                 } else {
                     word3.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 7 ) {
+                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -118,6 +150,16 @@ public class MainActivity2 extends AppCompatActivity {
                     word4.setBackgroundColor(Color.WHITE);
                 } else {
                     word4.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 7 ) {
+                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -130,6 +172,16 @@ public class MainActivity2 extends AppCompatActivity {
                     word5.setBackgroundColor(Color.WHITE);
                 } else {
                     word5.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 7 ) {
+                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -142,6 +194,16 @@ public class MainActivity2 extends AppCompatActivity {
                     word6.setBackgroundColor(Color.WHITE);
                 } else {
                     word6.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 7 ) {
+                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -154,9 +216,20 @@ public class MainActivity2 extends AppCompatActivity {
                     word7.setBackgroundColor(Color.WHITE);
                 } else {
                     word7.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 7 ) {
+                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
+        /* Words end */
     }
 
     private void updateTimer(int seconds) {

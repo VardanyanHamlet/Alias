@@ -21,7 +21,7 @@ public class MainActivity4 extends AppCompatActivity {
     ImageView lines, crown;
     Button play;
     private static final String COUNT_KEY = "count";
-    int count = 0;
+    int team_count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +31,17 @@ public class MainActivity4 extends AppCompatActivity {
         setContentView(R.layout.activity_main4);
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        count = sharedPreferences.getInt(COUNT_KEY, 0);
-        count++;
+        team_count = sharedPreferences.getInt(COUNT_KEY, 0);
+        team_count++;
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(COUNT_KEY, count);
+        editor.putInt(COUNT_KEY, team_count);
         editor.apply();
 
         TextView team12 = findViewById(R.id.team12);
-        if ( count % 2 == 1 ) {
+        if ( team_count % 2 == 1 ) {
             team12.setText("Team 2");
-        } else if ( count % 2 == 0 ) {
+        } else if ( team_count % 2 == 0 ) {
             team12.setText("Team 1");
         } else {
             team12.setText("START");
