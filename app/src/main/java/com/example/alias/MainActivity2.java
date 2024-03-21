@@ -700,6 +700,408 @@ public class MainActivity2 extends AppCompatActivity {
         word1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (word1.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word1.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word1.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word1.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word1.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word2.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word2.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word2.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word2.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word2.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word3.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word3.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word3.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word3.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word3.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word4.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word4.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word4.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word4.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word4.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word5.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word5.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word5.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word5.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word5.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word6.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word6.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word6.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word6.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word6.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word7.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word7.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word7.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word7.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word7.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word8.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word8.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word8.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word8.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word8.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word9.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word9.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word9.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word9.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word9.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+        word10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (word10.getBackground() instanceof ColorDrawable) {
+                    int color = ((ColorDrawable) word10.getBackground()).getColor();
+                    if (color == Color.WHITE) {
+                        word10.setBackgroundColor(Color.GRAY);
+                        clickcount++;
+                        points_value.setText(String.valueOf(clickcount));
+                        if (clickcount == 10) {
+                            resetWords();
+                        }
+                    } else if (color == Color.GRAY) {
+                        word10.setBackgroundColor(Color.WHITE);
+                        clickcount--;
+                        points_value.setText(String.valueOf(clickcount));
+                    }
+                } else {
+                    word10.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        resetWords();
+                    }
+                }
+            }
+            private void resetWords() {
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+        });
+
+
+        /*word1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 count1++;
                 if (count1 % 2 == 0 || count1 == 0) {
                     word1.setBackgroundColor(Color.WHITE);
@@ -985,7 +1387,7 @@ public class MainActivity2 extends AppCompatActivity {
                     count10 = 0;
                 }
             }
-        });
+        });*/
 
 
         /*
@@ -1240,6 +1642,19 @@ public class MainActivity2 extends AppCompatActivity {
         });
         */
     }
+
+    /*private void resetWords() {
+        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+    }*/
 
     private void updateTimer(int seconds) {
         timer.setText(String.valueOf(seconds));
