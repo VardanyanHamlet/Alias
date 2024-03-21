@@ -9,25 +9,56 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    TextView word1, word2, word3, word4, word5, word6, word7;
-    private TextView timer;
+    TextView word1, word2, word3, word4, word5, word6, word7, word8, word9, word10;
+    private TextView timer, team, points_value;
     private CountDownTimer countDownTimer;
-    private int grayCount = 0;
     private static final long TIMER_DURATION = 10000;
     private SharedPreferences sharedPreferences;
     private int count;
     protected int PressCount = 0;
+    private int team_count = 0;
+
+    int count1 = 0;
+    int count2 = 0;
+    int count3 = 0;
+    int count4 = 0;
+    int count5 = 0;
+    int count6 = 0;
+    int count7 = 0;
+    int count8 = 0;
+    int count9 = 0;
+    int count10 = 0;
+
+    /*boolean count1 = false;
+    boolean count2 = false;
+    boolean count3 = false;
+    boolean count4 = false;
+    boolean count5 = false;
+    boolean count6 = false;
+    boolean count7 = false;
+    boolean count8 = false;
+    boolean count9 = false;
+    boolean count10 = false;*/
+    private int  clickcount = 0;
+
+    private TextView[] textViews = new TextView[10];
+    private int clickedCount = 0;
+    private int[] nums = new int[10];
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -37,13 +68,32 @@ public class MainActivity2 extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main2);
 
+        TextView word1 = findViewById(R.id.word1);
+        TextView word2 = findViewById(R.id.word2);
+        TextView word3 = findViewById(R.id.word3);
+        TextView word4 = findViewById(R.id.word4);
+        TextView word5 = findViewById(R.id.word5);
+        TextView word6 = findViewById(R.id.word6);
+        TextView word7 = findViewById(R.id.word7);
+        TextView word8 = findViewById(R.id.word8);
+        TextView word9 = findViewById(R.id.word9);
+        TextView word10 = findViewById(R.id.word10);
+        TextView team = findViewById(R.id.team);
+        TextView points_value = findViewById(R.id.points_value);
         timer = findViewById(R.id.timer);
 
-        int initialTimeSeconds = 11;
 
+        if (MainActivity4.team()) {
+            team.setText("Team 1");
+        } else {
+            team.setText("Team 2");
+        }
+        MainActivity4.toggleText();
+
+
+        int initialTimeSeconds = 16;
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         count = sharedPreferences.getInt("count", 0);
-
         countDownTimer = new CountDownTimer(initialTimeSeconds * 1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -56,43 +106,909 @@ public class MainActivity2 extends AppCompatActivity {
                 finish();
             }
         };
-
         countDownTimer.start();
 
-        final int[] count1 = {0};
-        final int[] count2 = {0};
-        final int[] count3 = {0};
-        final int[] count4 = {0};
-        final int[] count5 = {0};
-        final int[] count6 = {0};
-        final int[] count7 = {0};
 
-        TextView word1 = findViewById(R.id.word1);
-        TextView word2 = findViewById(R.id.word2);
-        TextView word3 = findViewById(R.id.word3);
-        TextView word4 = findViewById(R.id.word4);
-        TextView word5 = findViewById(R.id.word5);
-        TextView word6 = findViewById(R.id.word6);
-        TextView word7 = findViewById(R.id.word7);
+        /*word1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count1) {
+                    word1.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word1.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count1 = !count1;
+                }
+            }
+        });
 
-        /* Words */
+        word2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count2) {
+                    word2.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word2.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count2 = !count2;
+                }
+            }
+        });
+
+        word3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count3) {
+                    word3.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word3.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count3 = !count3;
+                }
+            }
+        });
+
+        word4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count4) {
+                    word4.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word4.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count4 = !count4;
+                }
+            }
+        });
+
+        word5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count5) {
+                    word5.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word5.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count5 = !count5;
+                }
+            }
+        });
+
+        word6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count6) {
+                    word6.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word6.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count6 = !count6;
+                }
+            }
+        });
+
+        word7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count7) {
+                    word7.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word7.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count7 = !count7;
+                }
+            }
+        });
+
+        word8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count8) {
+                    word8.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word8.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count8 = !count8;
+            }
+        });
+
+        word9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count9) {
+                    word9.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word9.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count9 = !count9;
+            }
+        });
+
+        word10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count10) {
+                    word10.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word10.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count10 = !count10;
+            }
+        });*/
+
+
+        /**/
+        /*word1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count1) {
+                    word1.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word1.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count1 = !count1;
+            }
+        });
+
+        word2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count2) {
+                    word2.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word2.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count2 = !count2;
+            }
+        });
+
+        word3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count3) {
+                    word3.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word3.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count3 = !count3;
+            }
+        });
+
+        word4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count4) {
+                    word4.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word4.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count4 = !count4;
+            }
+        });
+
+        word5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count5) {
+                    word5.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word5.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count5 = !count5;
+            }
+        });
+
+        word6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count6) {
+                    word6.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word6.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count6 = !count6;
+            }
+        });
+
+        word7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count7) {
+                    word7.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word7.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count7 = !count7;
+            }
+        });
+
+        word8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count8) {
+                    word8.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word8.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count8 = !count8;
+            }
+        });
+
+        word9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count9) {
+                    word9.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word9.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (PressCount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count9 = !count9;
+            }
+        });
+
+        word10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count10) {
+                    word10.setBackgroundColor(Color.WHITE);
+                    PressCount--;
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word10.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if (clickcount == 10) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                count10 = !count10;
+            }
+        });*/
+        /**/
+
+
         word1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count1[0]++;
-                if (count1[0] % 2 == 0 || count1[0] == 0) {
+                count1++;
+                if (count1 % 2 == 0 || count1 == 0) {
+                    word1.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word1.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count1 = 0;
+                }
+            }
+        });
+
+        word2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count2++;
+                if (count2 % 2 == 0 || count2 == 0) {
+                    word2.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word2.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count2 = 0;
+                }
+            }
+        });
+
+        word3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count3++;
+                if (count3 % 2 == 0 || count3 == 0) {
+                    word3.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word3.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count3 = 0;
+                }
+            }
+        });
+
+        word4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count4++;
+                if (count4 % 2 == 0 || count4 == 0) {
+                    word4.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word4.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count4 = 0;
+                }
+            }
+        });
+
+        word5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count5++;
+                if (count5 % 2 == 0 || count5 == 0) {
+                    word5.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word5.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count5 = 0;
+                }
+            }
+        });
+
+        word6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count6++;
+                if (count6 % 2 == 0 || count6 == 0) {
+                    word6.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word6.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count6 = 0;
+                }
+            }
+        });
+
+        word7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count7++;
+                if (count7 % 2 == 0 || count7 == 0) {
+                    word7.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word7.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count7 = 0;
+                }
+            }
+        });
+
+        word8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count8++;
+                if (count8 % 2 == 0 || count8 == 0) {
+                    word8.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word8.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count8 = 0;
+                }
+            }
+        });
+
+        word9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count9++;
+                if (count9 % 2 == 0 || count9 == 0) {
+                    word9.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word9.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count9 = 0;
+                }
+            }
+        });
+
+        word10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count10++;
+                if (count10 % 2 == 0 || count10 == 0) {
+                    word10.setBackgroundColor(Color.WHITE);
+                    clickcount--;
+                    points_value.setText(String.valueOf(clickcount));
+                } else {
+                    word10.setBackgroundColor(Color.GRAY);
+                    clickcount++;
+                    points_value.setText(String.valueOf(clickcount));
+                    if ( clickcount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                    count10 = 0;
+                }
+            }
+        });
+
+
+        /*
+        word1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count1++;
+                if (count1 % 2 == 0 || count1 == 0) {
                     word1.setBackgroundColor(Color.WHITE);
                 } else {
                     word1.setBackgroundColor(Color.GRAY);
                     PressCount++;
-                    if ( PressCount == 7 ) {
-                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
-                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
-                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
-                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
-                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
-                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
-                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
                     }
                 }
             }
@@ -101,20 +1017,23 @@ public class MainActivity2 extends AppCompatActivity {
         word2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count2[0]++;
-                if (count2[0] % 2 == 0 || count2[0] == 0) {
+                count2++;
+                if (count2 % 2 == 0 || count2 == 0) {
                     word2.setBackgroundColor(Color.WHITE);
                 } else {
                     word2.setBackgroundColor(Color.GRAY);
                     PressCount++;
-                    if ( PressCount == 7 ) {
-                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
-                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
-                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
-                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
-                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
-                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
-                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
                     }
                 }
             }
@@ -123,20 +1042,23 @@ public class MainActivity2 extends AppCompatActivity {
         word3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count3[0]++;
-                if (count3[0] % 2 == 0 || count3[0] == 0) {
+                count3++;
+                if (count3 % 2 == 0 || count3 == 0) {
                     word3.setBackgroundColor(Color.WHITE);
                 } else {
                     word3.setBackgroundColor(Color.GRAY);
                     PressCount++;
-                    if ( PressCount == 7 ) {
-                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
-                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
-                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
-                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
-                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
-                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
-                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
                     }
                 }
             }
@@ -145,20 +1067,23 @@ public class MainActivity2 extends AppCompatActivity {
         word4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count4[0]++;
-                if (count4[0] % 2 == 0 || count4[0] == 0) {
+                count4++;
+                if (count4 % 2 == 0 || count4 == 0) {
                     word4.setBackgroundColor(Color.WHITE);
                 } else {
                     word4.setBackgroundColor(Color.GRAY);
                     PressCount++;
-                    if ( PressCount == 7 ) {
-                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
-                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
-                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
-                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
-                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
-                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
-                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
                     }
                 }
             }
@@ -167,20 +1092,23 @@ public class MainActivity2 extends AppCompatActivity {
         word5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count5[0]++;
-                if (count5[0] % 2 == 0 || count5[0] == 0) {
+                count5++;
+                if (count5 % 2 == 0 || count5 == 0) {
                     word5.setBackgroundColor(Color.WHITE);
                 } else {
                     word5.setBackgroundColor(Color.GRAY);
                     PressCount++;
-                    if ( PressCount == 7 ) {
-                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
-                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
-                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
-                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
-                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
-                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
-                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
                     }
                 }
             }
@@ -189,20 +1117,23 @@ public class MainActivity2 extends AppCompatActivity {
         word6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count6[0]++;
-                if (count6[0] % 2 == 0 || count6[0] == 0) {
+                count6++;
+                if (count6 % 2 == 0 || count6 == 0) {
                     word6.setBackgroundColor(Color.WHITE);
                 } else {
                     word6.setBackgroundColor(Color.GRAY);
                     PressCount++;
-                    if ( PressCount == 7 ) {
-                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
-                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
-                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
-                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
-                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
-                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
-                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
                     }
                 }
             }
@@ -211,25 +1142,103 @@ public class MainActivity2 extends AppCompatActivity {
         word7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count7[0]++;
-                if (count7[0] % 2 == 0 || count7[0] == 0) {
+                count7++;
+                if (count7 % 2 == 0 || count7 == 0) {
                     word7.setBackgroundColor(Color.WHITE);
                 } else {
                     word7.setBackgroundColor(Color.GRAY);
                     PressCount++;
-                    if ( PressCount == 7 ) {
-                        word1.setText("Word 8"); word1.setBackgroundColor(Color.WHITE);
-                        word2.setText("Word 9"); word2.setBackgroundColor(Color.WHITE);
-                        word3.setText("Word 10"); word3.setBackgroundColor(Color.WHITE);
-                        word4.setText("Word 11"); word4.setBackgroundColor(Color.WHITE);
-                        word5.setText("Word 12"); word5.setBackgroundColor(Color.WHITE);
-                        word6.setText("Word 13"); word6.setBackgroundColor(Color.WHITE);
-                        word7.setText("Word 14"); word7.setBackgroundColor(Color.WHITE);
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
                     }
                 }
             }
         });
-        /* Words end */
+
+        word8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count8++;
+                if (count8 % 2 == 0 || count8 == 0) {
+                    word8.setBackgroundColor(Color.WHITE);
+                } else {
+                    word8.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+        word9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count9++;
+                if (count9 % 2 == 0 || count9 == 0) {
+                    word9.setBackgroundColor(Color.WHITE);
+                } else {
+                    word9.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+        word10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count10++;
+                if (count10 % 2 == 0 || count10 == 0) {
+                    word10.setBackgroundColor(Color.WHITE);
+                } else {
+                    word10.setBackgroundColor(Color.GRAY);
+                    PressCount++;
+                    if ( PressCount == 10 ) {
+                        word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                        word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                        word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                        word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                        word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                        word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                        word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                        word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                        word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                        word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+        */
     }
 
     private void updateTimer(int seconds) {
@@ -255,3 +1264,4 @@ public class MainActivity2 extends AppCompatActivity {
         return false;
     }
 }
+

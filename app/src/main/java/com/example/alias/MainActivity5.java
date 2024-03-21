@@ -107,5 +107,10 @@ public class MainActivity5 extends AppCompatActivity {
                 finish();
             }
         });
+
+        RadioButton sec1 = findViewById(R.id.sec1);
+        sec1.setChecked(true);
+        RadioButton english = findViewById(R.id.english);
+        english.setChecked(true);
     }
 }

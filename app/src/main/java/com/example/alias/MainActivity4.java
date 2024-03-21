@@ -22,6 +22,7 @@ public class MainActivity4 extends AppCompatActivity {
     Button play;
     private static final String COUNT_KEY = "count";
     int team_count = 0;
+    private static boolean team = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,5 +59,13 @@ public class MainActivity4 extends AppCompatActivity {
             }
         });
 
+    }
+
+    public static boolean team() {
+        return team;
+    }
+
+    public static void toggleText() {
+        team = !team;
     }
 }
