@@ -89,6 +89,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word1.setBackgroundColor(Color.WHITE);
@@ -101,31 +103,35 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
 
             private void resetWords() {
-                word1.setText("Word 11");
-                word1.setBackgroundColor(Color.WHITE);
-                word2.setText("Word 12");
-                word2.setBackgroundColor(Color.WHITE);
-                word3.setText("Word 13");
-                word3.setBackgroundColor(Color.WHITE);
-                word4.setText("Word 14");
-                word4.setBackgroundColor(Color.WHITE);
-                word5.setText("Word 15");
-                word5.setBackgroundColor(Color.WHITE);
-                word6.setText("Word 16");
-                word6.setBackgroundColor(Color.WHITE);
-                word7.setText("Word 17");
-                word7.setBackgroundColor(Color.WHITE);
-                word8.setText("Word 18");
-                word8.setBackgroundColor(Color.WHITE);
-                word9.setText("Word 19");
-                word9.setBackgroundColor(Color.WHITE);
-                word10.setText("Word 20");
-                word10.setBackgroundColor(Color.WHITE);
+                word1.setText("Word 11"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 12"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 13"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 14"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 15"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 16"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 17"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -140,6 +146,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word2.setBackgroundColor(Color.WHITE);
@@ -152,6 +160,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -167,6 +177,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -181,6 +203,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word3.setBackgroundColor(Color.WHITE);
@@ -193,6 +217,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -208,6 +234,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -222,6 +260,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word4.setBackgroundColor(Color.WHITE);
@@ -234,6 +274,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -249,6 +291,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -263,6 +317,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word5.setBackgroundColor(Color.WHITE);
@@ -275,6 +331,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -290,6 +348,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -304,6 +374,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word6.setBackgroundColor(Color.WHITE);
@@ -316,6 +388,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -331,6 +405,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -345,6 +431,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word7.setBackgroundColor(Color.WHITE);
@@ -357,6 +445,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -372,6 +462,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -386,6 +488,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word8.setBackgroundColor(Color.WHITE);
@@ -398,6 +502,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -413,6 +519,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -427,6 +545,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word9.setBackgroundColor(Color.WHITE);
@@ -439,6 +559,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -454,6 +576,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
 
@@ -468,6 +602,8 @@ public class MainActivity2 extends AppCompatActivity {
                         points_value.setText(String.valueOf(clickcount));
                         if (clickcount == 10) {
                             resetWords();
+                        } else if (clickcount == 20) {
+                            resetWords2();
                         }
                     } else if (color == Color.GRAY) {
                         word10.setBackgroundColor(Color.WHITE);
@@ -480,6 +616,8 @@ public class MainActivity2 extends AppCompatActivity {
                     points_value.setText(String.valueOf(clickcount));
                     if (clickcount == 10) {
                         resetWords();
+                    } else if (clickcount == 20) {
+                        resetWords2();
                     }
                 }
             }
@@ -495,6 +633,18 @@ public class MainActivity2 extends AppCompatActivity {
                 word8.setText("Word 18"); word8.setBackgroundColor(Color.WHITE);
                 word9.setText("Word 19"); word9.setBackgroundColor(Color.WHITE);
                 word10.setText("Word 20"); word10.setBackgroundColor(Color.WHITE);
+            }
+            private void resetWords2() {
+                word1.setText("Word 21"); word1.setBackgroundColor(Color.WHITE);
+                word2.setText("Word 22"); word2.setBackgroundColor(Color.WHITE);
+                word3.setText("Word 23"); word3.setBackgroundColor(Color.WHITE);
+                word4.setText("Word 24"); word4.setBackgroundColor(Color.WHITE);
+                word5.setText("Word 25"); word5.setBackgroundColor(Color.WHITE);
+                word6.setText("Word 26"); word6.setBackgroundColor(Color.WHITE);
+                word7.setText("Word 27"); word7.setBackgroundColor(Color.WHITE);
+                word8.setText("Word 28"); word8.setBackgroundColor(Color.WHITE);
+                word9.setText("Word 29"); word9.setBackgroundColor(Color.WHITE);
+                word10.setText("Word 30"); word10.setBackgroundColor(Color.WHITE);
             }
         });
         /*Words end*/

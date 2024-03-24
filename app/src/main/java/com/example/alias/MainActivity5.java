@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class MainActivity5 extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class MainActivity5 extends AppCompatActivity {
     RadioButton sec1, sec2, sec3, sec4, sec5, sec6;
     RadioButton armenian, english, russian;
     Button play;
+    SeekBar time_seekbar, score_seekbar;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,6 +42,8 @@ public class MainActivity5 extends AppCompatActivity {
         armenian = findViewById(R.id.armenian);
         english = findViewById(R.id.english);
         russian = findViewById(R.id.russian);
+        time_seekbar = findViewById(R.id.time_seekBar);
+        score_seekbar = findViewById(R.id.score_seekBar);
 
 
         CompoundButton.OnCheckedChangeListener listener = new CompoundButton.OnCheckedChangeListener() {

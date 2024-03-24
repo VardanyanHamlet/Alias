@@ -17,8 +17,8 @@ import android.widget.TextView;
 
 public class MainActivity4 extends AppCompatActivity {
 
-    TextView score, best_score, team1, team2, team12;
-    ImageView lines, crown;
+    TextView score, best_score, team1, team2;
+    ImageView lines, crown, back;
     Button play;
     private static final String COUNT_KEY = "count";
     int team_count = 0;
@@ -31,6 +31,9 @@ public class MainActivity4 extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main4);
 
+        play = findViewById(R.id.play);
+        back = findViewById(R.id.back);
+
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         team_count = sharedPreferences.getInt(COUNT_KEY, 0);
         team_count++;
@@ -39,17 +42,6 @@ public class MainActivity4 extends AppCompatActivity {
         editor.putInt(COUNT_KEY, team_count);
         editor.apply();
 
-        TextView team12 = findViewById(R.id.team12);
-        if ( team_count % 2 == 1 ) {
-            team12.setText("Team 2");
-        } else if ( team_count % 2 == 0 ) {
-            team12.setText("Team 1");
-        } else {
-            team12.setText("START");
-        }
-
-
-        play = findViewById(R.id.play);
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +51,14 @@ public class MainActivity4 extends AppCompatActivity {
             }
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     public static boolean team() {
