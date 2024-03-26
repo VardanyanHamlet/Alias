@@ -33,7 +33,6 @@ public class MainActivity4 extends AppCompatActivity {
         setContentView(R.layout.activity_main4);
 
         play = findViewById(R.id.play);
-        back = findViewById(R.id.back);
         team1_part = findViewById(R.id.team1_part);
         team2_part = findViewById(R.id.team2_part);
         best_score = findViewById(R.id.best_score);
@@ -52,16 +51,6 @@ public class MainActivity4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity4.this, MainActivity2.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
                 startActivity(intent);
                 finish();
             }

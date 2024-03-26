@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class MainActivity2 extends AppCompatActivity {
 
     private TextView word1, word2, word3, word4, word5, word6, word7, word8, word9, word10;
-    private TextView timer, team, points_value;
+    private TextView timer, team12, points_value;
     private CountDownTimer countDownTimer;
     int initialTimeSeconds = 16;
     //private static final long TIMER_DURATION = 10000;
@@ -45,15 +45,15 @@ public class MainActivity2 extends AppCompatActivity {
         TextView word8 = findViewById(R.id.word8);
         TextView word9 = findViewById(R.id.word9);
         TextView word10 = findViewById(R.id.word10);
-        TextView team = findViewById(R.id.team);
+        TextView team12 = findViewById(R.id.team12);
         TextView points_value = findViewById(R.id.points_value);
         timer = findViewById(R.id.timer);
 
         /*Team 1, team 2 start*/
         if (MainActivity4.team()) {
-            team.setText("Team 1");
+            team12.setText("Team 1");
         } else {
-            team.setText("Team 2");
+            team12.setText("Team 2");
         }
         MainActivity4.toggleText();
         /*Team1, team 2 end*/
