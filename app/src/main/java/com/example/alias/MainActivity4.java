@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity4 extends AppCompatActivity {
@@ -20,8 +21,8 @@ public class MainActivity4 extends AppCompatActivity {
     TextView score, best_score, team1, team2;
     ImageView lines, crown, back;
     Button play;
+    LinearLayout team1_part, team2_part;
     private static final String COUNT_KEY = "count";
-    int team_count = 0;
     private static boolean team = true;
 
     @Override
@@ -33,14 +34,19 @@ public class MainActivity4 extends AppCompatActivity {
 
         play = findViewById(R.id.play);
         back = findViewById(R.id.back);
+        team1_part = findViewById(R.id.team1_part);
+        team2_part = findViewById(R.id.team2_part);
+        best_score = findViewById(R.id.best_score);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        team_count = sharedPreferences.getInt(COUNT_KEY, 0);
-        team_count++;
-
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(COUNT_KEY, team_count);
-        editor.apply();
+        if ( MainActivity5.isScore25Selected ) {
+            best_score.setText("25");
+        } else if ( MainActivity5.isScore50Selected ) {
+            best_score.setText("50");
+        } else if ( MainActivity5.isScore75Selected ) {
+            best_score.setText("75");
+        } else if ( MainActivity5.isScore100Selected ) {
+            best_score.setText("100");
+        }
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +57,7 @@ public class MainActivity4 extends AppCompatActivity {
             }
         });
 
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +67,6 @@ public class MainActivity4 extends AppCompatActivity {
             }
         });
     }
-
     public static boolean team() {
         return team;
     }

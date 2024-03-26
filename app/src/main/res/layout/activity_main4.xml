@@ -22,7 +22,7 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="Score"
         android:textColor="@color/black"
@@ -33,14 +33,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/team1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
+        android:layout_marginStart="75dp"
         android:layout_marginTop="170dp"
         android:text="Team 1"
         android:textColor="@color/black"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="80dp"
         android:text="Team 2"
         android:textColor="@color/black"
         android:textSize="30dp"
@@ -75,7 +75,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="100"
+        android:text="25"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -117,48 +117,36 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:id="@+id/team1_mas"
-        android:layout_width="191dp"
-        android:layout_height="410dp"
+        android:id="@+id/team1_part"
+        android:layout_width="170dp"
+        android:layout_height="385dp"
         android:backgroundTint="@color/black"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints">
     </LinearLayout>
+
+
 
     <LinearLayout
-        android:id="@+id/team2_mas"
-        android:layout_width="191dp"
-        android:layout_height="410dp"
+        android:id="@+id/team2_part"
+        android:layout_width="170dp"
+        android:layout_height="385dp"
         android:backgroundTint="@color/black"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintHorizontal_bias="0.855"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints">
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="-10dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

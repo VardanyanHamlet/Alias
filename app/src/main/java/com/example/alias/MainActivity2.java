@@ -21,6 +21,7 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView word1, word2, word3, word4, word5, word6, word7, word8, word9, word10;
     private TextView timer, team, points_value;
     private CountDownTimer countDownTimer;
+    int initialTimeSeconds = 16;
     //private static final long TIMER_DURATION = 10000;
     private SharedPreferences sharedPreferences;
     private int count;
@@ -58,7 +59,15 @@ public class MainActivity2 extends AppCompatActivity {
         /*Team1, team 2 end*/
 
         /*Timer start*/
-        int initialTimeSeconds = 16;
+        if ( MainActivity5.isTime45Selected ) {
+            initialTimeSeconds = 46;
+        } else if (  MainActivity5.isTime60Selected ) {
+            initialTimeSeconds = 61;
+        } else if ( MainActivity5.isTime75Selected ) {
+            initialTimeSeconds = 76;
+        } else if ( MainActivity5.isTime90Selected ) {
+            initialTimeSeconds = 91;
+        }
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         count = sharedPreferences.getInt("count", 0);
         countDownTimer = new CountDownTimer(initialTimeSeconds * 1000, 1000) {
@@ -649,7 +658,6 @@ public class MainActivity2 extends AppCompatActivity {
         });
         /*Words end*/
     }
-
     private void updateTimer(int seconds) {
         timer.setText(String.valueOf(seconds));
     }

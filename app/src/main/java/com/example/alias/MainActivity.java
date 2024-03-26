@@ -32,6 +32,19 @@ public class MainActivity extends AppCompatActivity {
         info = findViewById(R.id.info);
         settings = findViewById(R.id.settings);
 
+        /*Language*/
+        if ( MainActivity5.isArmenianSelected ) {
+            alias.setText("Ալիաս");
+            play.setText("Խաղալ");
+        } else if ( MainActivity5.isEnglishSelected ) {
+            alias.setText("Alias");
+            play.setText("Play");
+        } else if ( MainActivity5.isRussianSelected ) {
+            alias.setText("Алиас");
+            play.setText("Играть");
+        }
+        /*Language*/
+
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
