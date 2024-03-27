@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class MainActivity2 extends AppCompatActivity {
 
     private TextView word1, word2, word3, word4, word5, word6, word7, word8, word9, word10;
-    private TextView timer, team12, points_value;
+    private TextView timer, team1, team2, points_value;
     private CountDownTimer countDownTimer;
     int initialTimeSeconds = 16;
     //private static final long TIMER_DURATION = 10000;
@@ -45,15 +45,39 @@ public class MainActivity2 extends AppCompatActivity {
         TextView word8 = findViewById(R.id.word8);
         TextView word9 = findViewById(R.id.word9);
         TextView word10 = findViewById(R.id.word10);
-        TextView team12 = findViewById(R.id.team12);
+        TextView team1 = findViewById(R.id.team1);
+        TextView team2 = findViewById(R.id.team2);
         TextView points_value = findViewById(R.id.points_value);
         timer = findViewById(R.id.timer);
 
         /*Team 1, team 2 start*/
-        if (MainActivity4.team()) {
-            team12.setText("Team 1");
+        /*if (MainActivity4.team()) {
+            team2.setText("");
+            if ( MainActivity5.isArmenianSelected ) {
+                team1.setText("Թիմ 1");
+            } else if ( MainActivity5.isEnglishSelected ) {
+                team1.setText("Team 1");
+            } else if ( MainActivity5.isRussianSelected ) {
+                team1.setText("Команда 1");
+            }
         } else {
-            team12.setText("Team 2");
+            team1.setText("");
+            if ( MainActivity5.isArmenianSelected ) {
+                team2.setText("Թիմ 2");
+            } else if ( MainActivity5.isEnglishSelected ) {
+                team2.setText("Team 2");
+            } else if ( MainActivity5.isRussianSelected ) {
+                team2.setText("Команда 2");
+            }
+        }
+        MainActivity4.toggleText();*/
+
+        if (MainActivity4.team()) {
+            team1.setText("Team 1");
+            team2.setText("");
+        } else {
+            team1.setText("");
+            team2.setText("Team 2");
         }
         MainActivity4.toggleText();
         /*Team1, team 2 end*/

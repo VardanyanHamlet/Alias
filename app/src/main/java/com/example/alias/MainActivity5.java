@@ -40,7 +40,6 @@ public class MainActivity5 extends AppCompatActivity {
 
     TextView language, section;
     RadioButton sec1, sec2, sec3, sec4, sec5, sec6;
-    RadioButton armenian, english, russian;
     RadioButton time45, time60, time75, time90;
     RadioButton score25, score50, score75, score100;
     Button play;
@@ -52,9 +51,6 @@ public class MainActivity5 extends AppCompatActivity {
     public static boolean isScore50Selected = false;
     public static boolean isScore75Selected = false;
     public static boolean isScore100Selected = false;
-    public static boolean isArmenianSelected = false;
-    public static boolean isEnglishSelected = false;
-    public static boolean isRussianSelected = false;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -71,9 +67,6 @@ public class MainActivity5 extends AppCompatActivity {
         sec4 = findViewById(R.id.sec4);
         sec5 = findViewById(R.id.sec5);
         sec6 = findViewById(R.id.sec6);
-        armenian = findViewById(R.id.armenian);
-        english = findViewById(R.id.english);
-        russian = findViewById(R.id.russian);
         time45 = findViewById(R.id.time45);
         time60 = findViewById(R.id.time60);
         time75 = findViewById(R.id.time75);
@@ -94,9 +87,6 @@ public class MainActivity5 extends AppCompatActivity {
                 isScore50Selected = score50.isChecked();
                 isScore75Selected = score75.isChecked();
                 isScore100Selected = score100.isChecked();
-                isArmenianSelected = score100.isChecked();
-                isEnglishSelected = score100.isChecked();
-                isRussianSelected = score100.isChecked();
                 Intent intent = new Intent(MainActivity5.this, MainActivity4.class);
                 startActivity(intent);
                 finish();
@@ -138,27 +128,6 @@ public class MainActivity5 extends AppCompatActivity {
         sec4.setOnCheckedChangeListener(listener);
         sec5.setOnCheckedChangeListener(listener);
         sec6.setOnCheckedChangeListener(listener);
-
-        CompoundButton.OnCheckedChangeListener listener2 = new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    if (buttonView != armenian) {
-                        armenian.setChecked(false);
-                    }
-                    if (buttonView != english) {
-                        english.setChecked(false);
-                    }
-                    if (buttonView != russian) {
-                        russian.setChecked(false);
-                    }
-                }
-            }
-        };
-
-        armenian.setOnCheckedChangeListener(listener2);
-        english.setOnCheckedChangeListener(listener2);
-        russian.setOnCheckedChangeListener(listener2);
 
         CompoundButton.OnCheckedChangeListener listener3 = new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -213,8 +182,6 @@ public class MainActivity5 extends AppCompatActivity {
         /*Default selected*/
         RadioButton sec1 = findViewById(R.id.sec1);
         sec1.setChecked(true);
-        RadioButton english = findViewById(R.id.english);
-        english.setChecked(true);
         RadioButton time45 = findViewById(R.id.time45);
         time45.setChecked(true);
         RadioButton score25 = findViewById(R.id.score25);

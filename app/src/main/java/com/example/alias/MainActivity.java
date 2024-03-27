@@ -4,9 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.icu.text.IDNA;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,7 +15,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     TextView alias;
     Button play;
-    ImageButton info, settings;
+    ImageButton info;
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
@@ -30,25 +28,24 @@ public class MainActivity extends AppCompatActivity {
         alias = findViewById(R.id.alias);
         play = findViewById(R.id.play);
         info = findViewById(R.id.info);
-        settings = findViewById(R.id.settings);
 
         /*Language*/
-        if ( MainActivity5.isArmenianSelected ) {
+        /*if ( MainActivity6.isArmenianSelected ) {
             alias.setText("Ալիաս");
             play.setText("Խաղալ");
-        } else if ( MainActivity5.isEnglishSelected ) {
+        } else if ( MainActivity6.isEnglishSelected ) {
             alias.setText("Alias");
             play.setText("Play");
-        } else if ( MainActivity5.isRussianSelected ) {
+        } else if ( MainActivity6.isRussianSelected ) {
             alias.setText("Алиас");
             play.setText("Играть");
-        }
+        }*/
         /*Language*/
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity5.class);
+                Intent intent = new Intent(MainActivity.this, MainActivity6.class);
                 startActivity(intent);
                 finish();
             }
@@ -58,15 +55,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity3.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity6.class);
                 startActivity(intent);
                 finish();
             }
