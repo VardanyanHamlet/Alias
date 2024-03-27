@@ -9,12 +9,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity3 extends AppCompatActivity {
 
     ImageButton back;
-    TextView info1, info2, info3, info4, HowToPlay;
+    TextView info1, info2, info3, info4, info5, info6, HowToPlay;
+    RadioButton armenian, russian, english;
+    public static boolean isArmenianSelected = false;
+    public static boolean isRussianSelected = false;
+    public static boolean isEnglishSelected = false;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -24,32 +29,47 @@ public class MainActivity3 extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main3);
 
+        HowToPlay = findViewById(R.id.HowToPlay);
         back = findViewById(R.id.back);
         info1 = findViewById(R.id.info1);
         info2 = findViewById(R.id.info2);
         info3 = findViewById(R.id.info3);
         info4 = findViewById(R.id.info4);
-        HowToPlay = findViewById(R.id.HowToPlay);
+        info5 = findViewById(R.id.info5);
+        info6 = findViewById(R.id.info6);
+        armenian = findViewById(R.id.armenian);
+        russian = findViewById(R.id.russian);
+        english = findViewById(R.id.english);
 
-        /*if ( MainActivity6.isArmenianSelected ) {
+        isArmenianSelected = armenian.isChecked();
+        isRussianSelected = russian.isChecked();
+        isEnglishSelected = english.isChecked();
+
+        if ( MainActivity3.isArmenianSelected ) {
             HowToPlay.setText("Ինչպես Խաղալ");
-            info1.setText("Խաղը նախատեսված է ընկերների հետ խաղալու համար: Խաղացողները բաժանվում են 2 թիմի։ Խաղացողը պետք է խաղընկերոջը բացատրի էկրանին գրված բառը: Հաղթում է այն թիմը, որը կռահում է ավելի շատ բառեր:");
-            info2.setText("1)Ընտրեք լեզուն՝ հայերեն, անգլերեն կամ ռուսերեն:");
-            info3.setText("2)Ընտրեք, թե որքան ժամանակ պետք է տևի մեկ փուլը մեկ փուլ:");
-            info4.setText("3)Ընտրեք բաժինը` Ընդհանուր բառեր, Հայտնի մարդիկ, Քաղաք-երկրներ, Մնջախաղ, Ֆիլմեր կամ Հավաքական:");
-        } else if ( MainActivity6.isEnglishSelected ) {
+            info1.setText("Խաղը նախատեսված է ընկերների հետ խաղալու համար: Խաղացողները բաժանված են 2 թիմի: Խաղացողը պետք է խաղընկերոջը բացատրի էկրանին գրված բառը, յուրաքանչյուր ճիշտ գուշակած բառի համար թիմը կստանա 1 միավոր: Մեկ փուլի ընթացքում թիմը կարող է վաստակել առավելագույնը 30 միավոր։");
+            info2.setText("Խաղը սկսելուց առաջ խաղացողը պետք է ընտրի`");
+            info3.setText("1)Հաղթական միավորների քանակը");
+            info4.setText("2)1 փուլի տևողությունը");
+            info5.setText("3)Բաժինը");
+            info6.setText("Խաղացողը կարող է նաև ընտրել խաղի գույները:");
+        } else if ( MainActivity3.isRussianSelected ) {
             HowToPlay.setText("How To Play");
-            info1.setText("The game is designed to be played with friends. Players are divided into 2 teams. The player must explain the word written on the screen to his teammate. The team that guesses more words wins.");
-            info2.setText("1)Choose the language։ Armenian, English or Russian.");
-            info3.setText("2)Choose how long will one round take.");
-            info4.setText("3)Choose the section։ Common words, Famous people, City-countries, Pantomime, Films or Collective.");
-        } else if ( MainActivity6.isRussianSelected ) {
-            HowToPlay.setText("Как играть");
-            info1.setText("Игра предназначена для игры с друзьями. Игроки делятся на 2 команды. Игрок должен объяснить слово, написанное на экране, своему товарищу по команде. Побеждает та команда, которая угадает больше слов.");
-            info2.setText("1)Выберите язык: армянский, английский или русский.");
-            info3.setText("2)Выберите, сколько времени займет один раунд.");
-            info4.setText("3)Выберите раздел։ «Общие слова», «Известные люди», «Города-страны», «Пантомима», «Фильмы» или «Коллектив».");
-        }*/
+            info1.setText("The game is designed to be played with friends. The players are divided into 2 teams. The player must explain the word written on the screen to his teammate, for each correctly guessed word, the team will get 1 point. During one round, the team can earn a maximum of 30 points.");
+            info2.setText("Before starting the game, the player must choose:");
+            info3.setText("1)Number of winning points");
+            info4.setText("2)1 round duration");
+            info5.setText("3)The section");
+            info6.setText("The player can also choose the colors of the game.");
+        } else if ( MainActivity3.isEnglishSelected ) {
+            HowToPlay.setText("Как Играть");
+            info1.setText("Игра предназначена для игры с друзьями. Игроки делятся на 2 команды. Игрок должен объяснить товарищу по команде слово, написанное на экране, за каждое правильно угаданное слово команда получает 1 очко. За один раунд команда может заработать максимум 30 очков.");
+            info2.setText("Перед началом игры игрок должен выбрать:");
+            info3.setText("1)Количество выигрышных очков");
+            info4.setText("2)Продолжительность 1 раунда");
+            info5.setText("3)Раздел");
+            info6.setText("Игрок также может выбирать цвета игры.");
+        }
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
